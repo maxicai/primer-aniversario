@@ -2,19 +2,25 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>1 año ❤️</title>
-  <link rel="stylesheet" href="style1.css">
+  <title>Árbol de Corazones</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <a href="index.html" style="text-decoration: none;">
-    <div class="message">Te amo ❤️</div>
-  </a>
+  <div id="treeContainer">
+    <div id="tree" class="hidden">
+      <div class="branches"></div>
+      <div id="leaves"></div>
+    </div>
+  </div>
 
-  <div id="bubbles-text"></div>
+  <div id="leftText" class="hidden">
+    <p id="letterText"></p>
+    <p id="counter" class="hidden"></p>
+    <button id="videoButton" class="hidden pulse">Ver video ❤️</button>
+    <div id="videoEmbed" class="video-container hidden"></div>
+  </div>
 
-  <script src="script1.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
