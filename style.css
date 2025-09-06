@@ -1,0 +1,195 @@
+body {
+  margin: 0;
+  background: #fdf6ec;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  color: #5a3e36;
+}
+
+.hidden {
+  display: none;
+}
+
+#treeContainer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#tree {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#tree::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 320px;
+  background: #a97453;
+  border-radius: 30px;
+}
+
+.branches {
+  position: absolute;
+  bottom: 270px;
+  left: 50%;
+  width: 380px;
+  height: 230px;
+  background: #c8a383;
+  border-radius: 190px 190px 120px 120px;
+  transform: translateX(-50%);
+  box-shadow: 0 0 14px #dcbca1;
+}
+
+#leaves {
+  position: absolute;
+  bottom: 270px;
+  left: 50%;
+  width: 380px;
+  height: 230px;
+  transform: translateX(-50%);
+  overflow: hidden;
+  border-radius: 190px 190px 120px 120px;
+}
+
+.heart {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background: red;
+  transform: scale(0);
+  opacity: 0;
+  animation: appear 0.5s ease forwards;
+  transform-origin: center;
+  clip-path: path("M 8 2 C 5 0 0 3 0 7 C 0 11 8 16 8 16 C 8 16 16 11 16 7 C 16 3 11 0 8 2 Z");
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+#leftText {
+  position: fixed;
+  top: 6%;
+  left: 10%;
+  right: 10%;
+  font-size: 28px;
+  text-align: center;
+  white-space: normal;
+  word-break: break-word;
+  word-wrap: break-word;
+  max-width: 98vw;
+}
+
+#letterText {
+  display: block;
+  white-space: normal;
+  word-break: break-word;
+  word-wrap: break-word;
+  margin-bottom: 25px;
+}
+
+#counter {
+  font-size: 28px;
+  color: #d86f61;
+  margin-top: 35px;
+  opacity: 0;
+  transition: opacity 2s ease;
+  white-space: nowrap;
+}
+
+.showCounter {
+  animation: fadeSlide 2s ease forwards;
+}
+
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#videoButton {
+  margin-top: 30px;
+  padding: 14px 28px;
+  font-size: 22px;
+  background-color: #ffb6b9;
+  color: #5d4037;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 2s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  display: none;
+}
+
+#videoButton.showButton {
+  display: inline-block;
+  opacity: 1;
+}
+
+#videoButton:hover {
+  background-color: #ffa5a8;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 177.78%;
+  height: 0;
+  overflow: hidden;
+  margin: 30px auto;
+  max-width: 90vw;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+/* 👇 SOLO el efecto de latido (sin glow) */
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+
+/* Video a pantalla completa en celulares */
+.fullscreen-video {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  border-radius: 0 !important;
+  z-index: 9999;
+}
